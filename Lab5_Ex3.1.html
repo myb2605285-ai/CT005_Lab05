@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giới thiệu cá nhân - Lab05</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --primary: #1d4ed8;
+      --primary-dark: #102a67;
+      --accent: #f59e0b;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #dfe7f5;
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #edf4ff 0%, #f6f8fc 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px 40px;
+    }
+
+    .topbar {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: 2.3rem;
+      color: var(--primary-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .topbar p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .profile-card {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .avatar {
+      background: linear-gradient(135deg, #e0ecff 0%, #cfe1ff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      padding: 24px;
+    }
+
+    .avatar-box {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, #4d7cff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 3.2rem;
+      font-weight: bold;
+      box-shadow: 0 14px 30px rgba(29, 78, 216, 0.25);
+    }
+
+    .profile-info {
+      padding: 30px 28px 26px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(29, 78, 216, 0.1);
+      color: var(--primary);
+      font-weight: bold;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .profile-info h2 {
+      margin: 16px 0 8px;
+      font-size: 2rem;
+      color: var(--primary-dark);
+    }
+
+    .profile-info .job {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .intro {
+      margin: 0 0 20px;
+      color: var(--text);
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .detail-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+      gap: 10px 30px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .detail-list li {
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .detail-list strong {
+      color: var(--primary-dark);
+    }
+
+    .products {
+      display: grid;
+      gap: 26px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .product-card h3 {
+      margin: 0 0 18px;
+      font-size: 1.55rem;
+      color: var(--primary-dark);
+    }
+
+    .product-card p {
+      margin-top: 0;
+      color: var(--muted);
+      text-align: justify;
+    }
+
+    .pdf-box {
+      width: 100%;
+      height: 620px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .pdf-box embed {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .pdf-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .img-box {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #f9fbff;
+    }
+
+    .img-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .video-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 840px) {
+      .profile-card {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-info {
+        padding: 0 22px 24px;
+      }
+
+      .detail-list {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <h1>Trang Giới Thiệu Cá Nhân - Lab05</h1>
+      <p>Học tập, sáng tạo và trình bày sản phẩm trực quan một cách rõ ràng, đẹp mắt.</p>
+    </header>
+
+    <section class="profile-card">
+      <div class="avatar">
+        <div class="avatar-box">A</div>
+      </div>
+
+      <div class="profile-info">
+        <span class="tag">Sinh viên</span>
+        <h2>Nguyễn Văn A</h2>
+        <p class="job">Chuyên ngành Công nghệ Thông tin</p>
+
+        <p class="intro">
+          Tôi là một sinh viên đam mê công nghệ, luôn tìm cách học tập và áp dụng kiến thức vào thực tế.
+          Dưới đây là trang giới thiệu các sản phẩm của Lab05, bao gồm bài PDF, infographic và video hướng dẫn,
+          nhằm thể hiện khả năng tổng hợp và trình bày nội dung một cách hiệu quả và chuyên nghiệp.
+        </p>
+
+        <ul class="detail-list">
+          <li><strong>MSSV:</strong> 2024xxxxx</li>
+          <li><strong>Email:</strong> nguyenvana@email.com</li>
+          <li><strong>Khóa:</strong> Kỳ 2024 - 2025</li>
+          <li><strong>Địa chỉ:</strong> TP. Hồ Chí Minh</li>
+        </ul>
+      </div>
+    </section>
+
+    <main class="products">
+      <section class="product-card">
+        <h3>1. File PDF Lab05_Ex1.2.pdf</h3>
+        <p>
+          Sản phẩm PDF là tài liệu tổng hợp nội dung chính của Lab05, bao gồm các yêu cầu, mục tiêu học tập và
+          các bước thực hiện. Đây là dạng tài liệu chuyên nghiệp giúp người xem dễ dàng lưu trữ và xem lại thông tin.
+        </p>
+        <div class="pdf-box">
+          <embed src="Lab05_Ex1.2.pdf" type="application/pdf" />
+        </div>
+        <a class="pdf-link" href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener">Mở file PDF đầy đủ</a>
+      </section>
+
+      <section class="product-card">
+        <h3>2. Ảnh Infographic Lab05_Ex2.1.png</h3>
+        <p>
+          Ảnh infographic tóm tắt nội dung một cách trực quan, giúp người xem nắm bắt nhanh các ý chính, mối quan hệ
+          giữa các thành phần và kết quả học tập đạt được trong bài thí nghiệm này.
+        </p>
+        <div class="img-box">
+          <img src="Lab05_Ex2.1.png" alt="Infographic bài Lab05" />
+        </div>
+      </section>
+
+      <section class="product-card">
+        <h3>3. Video YouTube</h3>
+        <p>
+          Video YouTube được tích hợp trực tiếp để bổ sung phần giải thích bằng hình ảnh và âm thanh. Đây là phương pháp
+          hiệu quả để truyền tải kiến thức một cách sinh động, dễ hiểu và thu hút người xem.
+        </p>
+        <div class="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/qt-7Dr2iUGg"
+            title="Video Lab05"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-note">
+      Lab05 - Bài tập giới thiệu sản phẩm học tập và cá nhân hóa thông tin theo chủ đề trực quan.
+    </div>
+  </div>
+</body>
+</html>
